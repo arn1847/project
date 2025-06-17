@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Aditi Construction Company</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .portfolio-section {
+            padding: 4rem 2rem;
+        }
+        
+        .portfolio-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .portfolio-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .portfolio-header h2 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .portfolio-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .filter-btn {
+            background-color: var(--light-bg);
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .portfolio-item {
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .portfolio-image {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+        }
+        
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .portfolio-item:hover .portfolio-image img {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 28, 64, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-overlay a {
+            color: var(--secondary-color);
+            background-color: var(--accent-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        
+        .portfolio-overlay a:hover {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-info {
+            padding: 1.5rem;
+        }
+        
+        .portfolio-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .portfolio-info p {
+            margin-bottom: 1rem;
+        }
+        
+        .portfolio-info .category {
+            display: inline-block;
+            background-color: var(--light-bg);
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            color: var(--primary-color);
+        }
+        
+        .project-details {
+            background-color: var(--light-bg);
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+        }
+        
+        .project-details-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .project-details-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .project-details-header h2 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-details-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .project-details-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-details-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .project-details-text h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        
+        .project-details-text p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .project-details-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .project-details-info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .project-details-info-item i {
+            color: var(--primary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+            
+            .project-details-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-details-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Aditi Construction Logo" class="logo">
+            <div class="company-info">
+                <h1>Aditi Construction Company</h1>
+                <p class="tagline">ENGINEERS, ENVIRONMENTALISTS, TECHNOCRATS, BUILDERS, CONTRACTORS</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="portfolio-section">
+        <div class="portfolio-container">
+            <div class="portfolio-header">
+                <h2>Our Portfolio</h2>
+                <p>Explore our completed projects and success stories</p>
+            </div>
+            
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="institutional">Institutional</button>
+                <button class="filter-btn" data-filter="commercial">Commercial</button>
+                <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
+                <button class="filter-btn" data-filter="residential">Residential</button>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="institutional">
+                    <div class="portfolio-image">
+                        <img src="images/project-iit1.jpg" alt="IIT Kanpur Academic Building">
+                        <div class="portfolio-overlay">
+                            <a href="#"><i class="fas fa-link"></i></a>
+                            <a href="images/project-iit1.jpg"><i class="fas fa-search"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>IIT Kanpur Academic Building</h3>
+                        <p>Construction of a state-of-the-art academic building at IIT Kanpur campus.</p>
+                        <span class="category">Institutional</span>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="institutional">
+                    <div class="portfolio-image">
+                        <img src="images/project-iit2.jpg" alt="IIT Kanpur Laboratory Complex">
+                        <div class="portfolio-overlay">
+                            <a href="#"><i class="fas fa-link"></i></a>
+                            <a href="images/project-iit2.jpg"><i class="fas fa-search"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>IIT Kanpur Laboratory Complex</h3>
+                        <p>Development of specialized laboratory facilities for research and development.</p>
+                        <span class="category">Institutional</span>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="institutional">
+                    <div class="portfolio-image">
+                        <img src="images/project-alimco1.jpg" alt="ALIMCO Kanpur Manufacturing Unit">
+                        <div class="portfolio-overlay">
+                            <a href="#"><i class="fas fa-link"></i></a>
+                            <a href="images/project-alimco1.jpg"><i class="fas fa-search"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>ALIMCO Kanpur Manufacturing Unit</h3>
+                        <p>Construction of specialized manufacturing facilities for artificial limbs and rehabilitation equipment.</p>
+                        <span class="category">Institutional</span>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="commercial">
+                    <div class="portfolio-image">
+                        <img src="images/project-commercial1.jpg" alt="Commercial Complex">
+                        <div class="portfolio-overlay">
+                            <a href="#"><i class="fas fa-link"></i></a>
+                            <a href="images/project-commercial1.jpg"><i class="fas fa-search"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Modern Commercial Complex</h3>
+                        <p>Development of a multi-story commercial building with office spaces and retail outlets.</p>
+                        <span class="category">Commercial</span>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="infrastructure">
+                    <div class="portfolio-image">
+                        <img src="images/project-infrastructure1.jpg" alt="Road Construction Project">
+                        <div class="portfolio-overlay">
+                            <a href="#"><i class="fas fa-link"></i></a>
+                            <a href="images/project-infrastructure1.jpg"><i class="fas fa-search"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Urban Road Development</h3>
+                        <p>Construction of urban roads with proper drainage systems and pedestrian pathways.</p>
+                        <span class="category">Infrastructure</span>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="residential">
+                    <div class="portfolio-image">
+                        <img src="images/project-residential1.jpg" alt="Residential Complex">
+                        <div class="portfolio-overlay">
+                            <a href="#"><i class="fas fa-link"></i></a>
+                            <a href="images/project-residential1.jpg"><i class="fas fa-search"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Modern Residential Complex</h3>
+                        <p>Development of a residential complex with modern amenities and sustainable features.</p>
+                        <span class="category">Residential</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-details">
+        <div class="project-details-container">
+            <div class="project-details-header">
+                <h2>Featured Project: IIT Kanpur Academic Block</h2>
+                <p>A showcase of our expertise in institutional construction</p>
+            </div>
+            
+            <div class="project-details-content">
+                <div class="project-details-text">
+                    <h3>Project Overview</h3>
+                    <p>The IIT Kanpur Academic Block project was a significant undertaking that showcased our expertise in institutional construction. This state-of-the-art facility was designed to provide modern educational spaces for one of India's premier technical institutes.</p>
+                    <p>The project involved constructing a multi-story building with classrooms, lecture halls, faculty offices, and specialized laboratories. We implemented sustainable building practices and used high-quality materials to ensure durability and energy efficiency.</p>
+                    <p>Our team worked closely with the institute's administration to ensure minimal disruption to academic activities during construction. The project was completed on schedule and within budget, meeting all quality standards and specifications.</p>
+                    
+                    <div class="project-details-info">
+                        <div class="project-details-info-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>Project Duration: 18 months</span>
+                        </div>
+                        <div class="project-details-info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Location: IIT Kanpur Campus</span>
+                        </div>
+                        <div class="project-details-info-item">
+                            <i class="fas fa-building"></i>
+                            <span>Area: 45,000 sq. ft.</span>
+                        </div>
+                        <div class="project-details-info-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Status: Completed</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-details-image">
+                    <img src="images/project-iit-featured.jpg" alt="IIT Kanpur Academic Block">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Aditi Construction Company</h3>
+                <p>Directed by: Er. Kalika Prasad</p>
+                <p><i class="fas fa-map-marker-alt"></i> Office Address: MIG 149, Ratanpur, Panki, Kanpur – 208020</p>
+                <p><i class="fas fa-building"></i> Head Office: Gopalpur, Sardha Bazar, Azamgarh – 276139</p>
+                <p><i class="fas fa-phone"></i> Contact No.: 7376034428</p>
+                <p><i class="fas fa-envelope"></i> Email: kpg7376@gmail.com</p>
+                <p><i class="fas fa-file-invoice"></i> GST No.: 09CFYPP0778P2Z1</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Aditi Construction Company. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

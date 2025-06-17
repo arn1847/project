@@ -1,0 +1,6 @@
+# robots.txt for Aditi Construction Company Website
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.aditiconstruction.com/sitemap.xml

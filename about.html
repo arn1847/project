@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Aditi Construction Company</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .about-section {
+            padding: 4rem 2rem;
+        }
+        
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .about-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .about-header h2 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .mission-vision {
+            background-color: var(--light-bg);
+            padding: 4rem 2rem;
+        }
+        
+        .mission-vision-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .mission, .vision {
+            background-color: var(--secondary-color);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mission h3, .vision h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .mission i, .vision i {
+            color: var(--accent-color);
+        }
+        
+        .team-section {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .team-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .team-header {
+            margin-bottom: 3rem;
+        }
+        
+        .team-header h2 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .team-member {
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        
+        .team-member img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .team-member-info {
+            padding: 1.5rem;
+        }
+        
+        .team-member-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-member-info p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .about-content, .mission-vision-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Aditi Construction Logo" class="logo">
+            <div class="company-info">
+                <h1>Aditi Construction Company</h1>
+                <p class="tagline">ENGINEERS, ENVIRONMENTALISTS, TECHNOCRATS, BUILDERS, CONTRACTORS</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-header">
+                <h2>About Aditi Construction Company</h2>
+                <p>Building Excellence Since Establishment</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Story</h3>
+                    <p>Aditi Construction Company was established with a vision to deliver high-quality construction services with integrity and excellence. Under the leadership of Er. Kalika Prasad, we have grown to become one of the trusted names in the construction industry in Uttar Pradesh.</p>
+                    <p>With years of experience in civil engineering and construction, we specialize in infrastructure development, commercial buildings, and government projects. Our expertise in handling civil tenders for prestigious institutions like IIT Kanpur and ALIMCO Kanpur has established our reputation for quality and reliability.</p>
+                    <p>We take pride in our team of skilled engineers, environmentalists, technocrats, and contractors who work together to deliver projects that stand the test of time.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/about-image.jpg" alt="Aditi Construction Company Building">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission-vision">
+        <div class="mission-vision-container">
+            <div class="mission">
+                <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+                <p>To deliver construction projects with the highest standards of quality, safety, and environmental responsibility while exceeding client expectations through innovative solutions and timely delivery.</p>
+                <p>We are committed to maintaining the highest level of professionalism, integrity, honesty, and fairness in our relationships with our suppliers, subcontractors, professional associates, and customers.</p>
+            </div>
+            <div class="vision">
+                <h3><i class="fas fa-eye"></i> Our Vision</h3>
+                <p>To be the most trusted and respected construction company known for excellence in quality, reliability, and innovation in the construction industry.</p>
+                <p>We aim to create infrastructure that contributes positively to society while maintaining environmental sustainability and providing value to our clients.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="team-container">
+            <div class="team-header">
+                <h2>Our Leadership Team</h2>
+                <p>Meet the experts behind our success</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="images/director.jpg" alt="Er. Kalika Prasad">
+                    <div class="team-member-info">
+                        <h3>Er. Kalika Prasad</h3>
+                        <p>Director</p>
+                        <p>With over 20 years of experience in civil engineering and construction, Er. Kalika Prasad leads Aditi Construction Company with vision and expertise.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="images/engineer.jpg" alt="Senior Engineer">
+                    <div class="team-member-info">
+                        <h3>Senior Engineer</h3>
+                        <p>Chief Engineer</p>
+                        <p>Our Chief Engineer oversees all technical aspects of our projects, ensuring quality and compliance with industry standards.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="images/project-manager.jpg" alt="Project Manager">
+                    <div class="team-member-info">
+                        <h3>Project Manager</h3>
+                        <p>Operations Head</p>
+                        <p>Our Project Manager ensures timely delivery of projects while maintaining the highest standards of quality and client satisfaction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Aditi Construction Company</h3>
+                <p>Directed by: Er. Kalika Prasad</p>
+                <p><i class="fas fa-map-marker-alt"></i> Office Address: MIG 149, Ratanpur, Panki, Kanpur – 208020</p>
+                <p><i class="fas fa-building"></i> Head Office: Gopalpur, Sardha Bazar, Azamgarh – 276139</p>
+                <p><i class="fas fa-phone"></i> Contact No.: 7376034428</p>
+                <p><i class="fas fa-envelope"></i> Email: kpg7376@gmail.com</p>
+                <p><i class="fas fa-file-invoice"></i> GST No.: 09CFYPP0778P2Z1</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Aditi Construction Company. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

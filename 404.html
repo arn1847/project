@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Aditi Construction Company</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .error-container {
+            text-align: center;
+            padding: 100px 20px;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .error-code {
+            font-size: 120px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 0;
+            line-height: 1;
+        }
+        
+        .error-message {
+            font-size: 24px;
+            margin: 20px 0;
+            color: var(--text-color);
+        }
+        
+        .error-description {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: var(--text-color);
+            max-width: 600px;
+        }
+        
+        .error-icon {
+            font-size: 60px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .back-home {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .back-home:hover {
+            background-color: #0c2252;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo-container">
+                <img src="images/logo.svg" alt="Aditi Construction Company Logo" class="logo">
+                <div class="company-info">
+                    <h1>Aditi Construction Company</h1>
+                    <p>ENGINEERS, ENVIRONMENTALISTS, TECHNOCRATS, BUILDERS, CONTRACTORS</p>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="error-container">
+            <div class="error-icon">
+                <i class="fas fa-hard-hat"></i>
+            </div>
+            <h2 class="error-code">404</h2>
+            <h3 class="error-message">Page Not Found</h3>
+            <p class="error-description">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+            <a href="index.html" class="back-home">Back to Home</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Aditi Construction Company</h3>
+                    <p>ENGINEERS, ENVIRONMENTALISTS, TECHNOCRATS, BUILDERS, CONTRACTORS</p>
+                    <p>Directed by: Er. Kalika Prasad</p>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Information</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Office: MIG 149, Ratanpur, Panki, Kanpur – 208020</p>
+                    <p><i class="fas fa-building"></i> Head Office: Gopalpur, Sardha Bazar, Azamgarh – 276139</p>
+                    <p><i class="fas fa-phone"></i> Contact: 7376034428</p>
+                    <p><i class="fas fa-envelope"></i> Email: kpg7376@gmail.com</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Aditi Construction Company. All Rights Reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
